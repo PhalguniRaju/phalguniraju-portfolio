@@ -11,45 +11,13 @@ body {
   line-height: 1.6;
 }
 
-header {
+header.hero {
+  text-align: center;
+  padding: 4rem 1rem;
   background: #161b22;
-  padding: 1rem 2rem;
   position: sticky;
   top: 0;
   z-index: 10;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  color: #58a6ff;
-  font-size: 1.5rem;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.2rem;
-}
-
-.nav-links a {
-  color: #c9d1d9;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: #58a6ff;
-}
-
-/* Hero */
-.hero {
-  text-align: center;
-  padding: 4rem 1rem;
 }
 
 .profile-pic {
@@ -85,7 +53,6 @@ header {
   background: #1f6feb;
 }
 
-/* Sections */
 section {
   padding: 3rem 2rem;
   max-width: 900px;
@@ -98,25 +65,27 @@ h2 {
   text-align: center;
 }
 
-/* Education */
-.edu-container {
+.edu-container,
+.projects-container {
   display: grid;
   gap: 1.5rem;
 }
 
-.edu-card {
+.edu-card,
+.project-card,
+.cert-list li {
   background: #161b22;
   padding: 1rem;
   border-radius: 12px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.edu-card:hover {
+.edu-card:hover,
+.project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 10px #58a6ff;
 }
 
-/* Skills */
 .skills-list {
   display: flex;
   flex-wrap: wrap;
@@ -136,37 +105,9 @@ h2 {
   color: #0d1117;
 }
 
-/* Projects */
-.projects-container {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.project-card {
-  background: #161b22;
-  padding: 1rem;
-  border-radius: 12px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 10px #58a6ff;
-}
-
-/* Certifications */
 .cert-list {
   list-style: none;
   text-align: center;
-}
-
-.cert-list li {
-  background: #161b22;
-  margin: 0.5rem auto;
-  padding: 0.7rem;
-  border-radius: 12px;
-  max-width: 600px;
-  transition: background 0.3s;
 }
 
 .cert-list li:hover {
@@ -174,28 +115,39 @@ h2 {
   color: #0d1117;
 }
 
-/* Contact */
-.contact-info {
+.contact-info,
+footer {
   text-align: center;
 }
 
-.contact-info a {
+a {
   color: #58a6ff;
   text-decoration: none;
 }
 
-.contact-info a:hover {
+a:hover {
   text-decoration: underline;
 }
 
-/* Animations */
-.animate {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease-out;
-}
+/* Theme support */
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #fff;
+    color: #000;
+  }
 
-.animate.visible {
-  opacity: 1;
-  transform: translateY(0);
+  header.hero {
+    background: #f5f5f5;
+  }
+
+  .btn {
+    background: #1f6feb;
+    color: #fff;
+  }
+
+  .edu-card,
+  .project-card,
+  .cert-list li {
+    background: #f5f5f5;
+  }
 }
