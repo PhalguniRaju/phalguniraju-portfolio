@@ -1,55 +1,206 @@
-/* --- Mobile and overflow fixes --- */
-
-/* Prevent unwanted sideways scrolling */
-html, body {
-  overflow-x: hidden;
-  width: 100%;
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-/* Make sure images don’t overflow */
-img, .profile-pic {
-  max-width: 100%;
-  height: auto;
+/* Base styles */
+body {
+  background-color: #0d1117;
+  color: #fff;
+  line-height: 1.6;
 }
 
-/* Ensure sections fit smaller screens */
-section {
-  width: 100%;
-  padding-left: 1rem;
-  padding-right: 1rem;
+/* Header (no sticky) */
+header {
+  background: #161b22;
+  padding: 1rem 2rem;
+  /* position: sticky;  <-- removed */
+  /* top: 0; */
+  /* z-index: 10; */
 }
 
-/* Adjust hero for mobile */
+/* Navbar (if you ever add one again) */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #58a6ff;
+  font-size: 1.5rem;
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+}
+
+.nav-links a {
+  color: #c9d1d9;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #58a6ff;
+}
+
+/* Hero */
 .hero {
-  padding: 3rem 1rem;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.profile-pic {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #58a6ff;
+  margin-bottom: 1rem;
+}
+
+.name {
+  font-size: 2rem;
+  color: white;
+}
+
+.tagline {
+  color: #8b949e;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  background: #58a6ff;
+  color: #0d1117;
+  padding: 0.8rem 1.4rem;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #1f6feb;
+}
+
+/* Sections */
+section {
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+h2 {
+  color: #58a6ff;
+  margin-bottom: 1rem;
   text-align: center;
 }
 
-/* Make text scale down properly */
-@media (max-width: 600px) {
-  .profile-pic {
-    width: 120px;
-    height: 120px;
-  }
+/* Education */
+.edu-container {
+  display: grid;
+  gap: 1.5rem;
+}
 
-  .name {
-    font-size: 1.5rem;
-  }
+.edu-card {
+  background: #161b22;
+  padding: 1rem;
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-  .tagline {
-    font-size: 0.9rem;
-  }
+.edu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 10px #58a6ff;
+}
 
-  .btn {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
-  }
+/* Skills */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
 
-  section {
-    padding: 2rem 1rem;
-  }
+.skills-list li {
+  background: #161b22;
+  padding: 0.6rem 1rem;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
 
-  .edu-card, .project-card, .cert-list li {
-    padding: 0.8rem;
-  }
+.skills-list li:hover {
+  background: #58a6ff;
+  color: #0d1117;
+}
+
+/* Projects */
+.projects-container {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: #161b22;
+  padding: 1rem;
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 10px #58a6ff;
+}
+
+/* Certifications */
+.cert-list {
+  list-style: none;
+  text-align: center;
+}
+
+.cert-list li {
+  background: #161b22;
+  margin: 0.5rem auto;
+  padding: 0.7rem;
+  border-radius: 12px;
+  max-width: 600px;
+  transition: background 0.3s;
+}
+
+.cert-list li:hover {
+  background: #58a6ff;
+  color: #0d1117;
+}
+
+/* Contact */
+.contact-info {
+  text-align: center;
+}
+
+.contact-info a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Animations */
+.animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.animate.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
