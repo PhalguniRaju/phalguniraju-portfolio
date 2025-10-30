@@ -11,6 +11,7 @@ body {
   line-height: 1.6;
 }
 
+/* Header / Hero */
 header.hero {
   text-align: center;
   padding: 4rem 1rem;
@@ -53,6 +54,7 @@ header.hero {
   background: #1f6feb;
 }
 
+/* Sections */
 section {
   padding: 3rem 2rem;
   max-width: 900px;
@@ -65,6 +67,7 @@ h2 {
   text-align: center;
 }
 
+/* Cards */
 .edu-container,
 .projects-container {
   display: grid;
@@ -86,6 +89,7 @@ h2 {
   box-shadow: 0 0 10px #58a6ff;
 }
 
+/* Skills */
 .skills-list {
   display: flex;
   flex-wrap: wrap;
@@ -105,6 +109,7 @@ h2 {
   color: #0d1117;
 }
 
+/* Certifications */
 .cert-list {
   list-style: none;
   text-align: center;
@@ -115,8 +120,9 @@ h2 {
   color: #0d1117;
 }
 
-.contact-info,
-footer {
+/* Contact + Footer */
+footer,
+#contact {
   text-align: center;
 }
 
@@ -129,7 +135,19 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Theme support */
+/* Scroll Animation */
+.animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Light mode support */
 @media (prefers-color-scheme: light) {
   body {
     background-color: #fff;
